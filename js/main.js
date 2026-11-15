@@ -6,6 +6,8 @@ function renderProjects() {
     <a
       class="project-card reveal"
       href="project.html?id=${encodeURIComponent(project.id)}"
+      data-analytics-event="project_card_click"
+      data-project-id="${escapeAttribute(project.id)}"
       aria-label="Open project details for ${escapeAttribute(project.title)}"
     >
       <div class="project-card-top">

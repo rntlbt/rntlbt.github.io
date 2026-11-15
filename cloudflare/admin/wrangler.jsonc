@@ -1,0 +1,43 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "rntlbt-portfolio-analytics",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-15",
+  "workers_dev": true,
+  "vars": {
+    "DASHBOARD_TIMEZONE": "Asia/Manila",
+    "RAW_RETENTION_DAYS": "180"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "rntlbt-portfolio-db",
+      "database_id": "030b0c55-0129-4c01-9d19-f2a43c549a42",
+      "migrations_dir": "../migrations"
+    }
+  ],
+  "access": {
+    "dev": {
+      "aud": "local-portfolio-analytics",
+      "identity": {
+        "email": "owner@example.com"
+      }
+    }
+  },
+  "env": {
+    "development": {
+      "vars": {
+        "DASHBOARD_TIMEZONE": "Asia/Manila",
+        "RAW_RETENTION_DAYS": "180"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "rntlbt-portfolio-db",
+          "database_id": "030b0c55-0129-4c01-9d19-f2a43c549a42",
+          "migrations_dir": "../migrations"
+        }
+      ]
+    }
+  }
+}

@@ -46,7 +46,7 @@
           <img class="profile-photo" src="assets/images/profile.png" alt="Aaron Santos Tulabut">
           <div class="hero-panel-footer">
             <span>Based in Pampanga</span>
-            <a href="https://github.com/rntlbt" target="_blank" rel="noreferrer">GitHub &nearr;</a>
+            <a href="https://github.com/rntlbt" target="_blank" rel="noreferrer" data-analytics-event="github_profile_click">GitHub &nearr;</a>
           </div>
         </aside>
       </section>
@@ -182,12 +182,12 @@
           <div class="contact-links">
             <div class="contact-link">
               <span>Email</span>
-              <a class="contact-link-value" href="mailto:aarontulabut21@gmail.com"><strong>aarontulabut21@gmail.com</strong><span class="contact-link-arrow" aria-hidden="true">&nearr;</span></a>
-              <button class="copy-button" type="button" data-copy-value="aarontulabut21@gmail.com" data-copy-label="email" aria-label="Copy email address">Copy</button>
+              <a class="contact-link-value" href="mailto:aarontulabut21@gmail.com" data-analytics-event="email_contact_click"><strong>aarontulabut21@gmail.com</strong><span class="contact-link-arrow" aria-hidden="true">&nearr;</span></a>
+              <button class="copy-button" type="button" data-copy-value="aarontulabut21@gmail.com" data-copy-label="email" data-analytics-event="copy_email" aria-label="Copy email address">Copy</button>
             </div>
             <div class="contact-link">
               <span>GitHub</span>
-              <a class="contact-link-value" href="https://github.com/rntlbt" target="_blank" rel="noreferrer"><strong>github.com/rntlbt</strong><span class="contact-link-arrow" aria-hidden="true">&nearr;</span></a>
+              <a class="contact-link-value" href="https://github.com/rntlbt" target="_blank" rel="noreferrer" data-analytics-event="github_profile_click"><strong>github.com/rntlbt</strong><span class="contact-link-arrow" aria-hidden="true">&nearr;</span></a>
               <button class="copy-button" type="button" data-copy-value="https://github.com/rntlbt" data-copy-label="GitHub URL" aria-label="Copy GitHub URL">Copy</button>
             </div>
           </div>
@@ -197,12 +197,14 @@
 
     <footer class="site-footer">
       <span>&copy; 2026 Aaron Santos Tulabut</span>
-      <a href="#top">Back to top &uarr;</a>
+      <span><a href="privacy.html">Privacy</a> &middot; <a href="#top">Back to top &uarr;</a></span>
     </footer>
   </div>
 
   <script src="js/projects-data.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/analytics-config.js"></script>
+  <script src="js/analytics-tracker.js"></script>
 </body>
 </html>
 

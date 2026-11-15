@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy information for Aaron Santos Tulabut's portfolio.">
+  <meta name="theme-color" content="#121212">
+  <title>Privacy | Aaron Santos Tulabut</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="index.html" aria-label="Aaron Santos Tulabut home">AST</a>
+      <nav class="site-nav" aria-label="Privacy navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="header-cta" href="index.html">Back home <span aria-hidden="true">&larr;</span></a>
+    </header>
+
+    <main>
+      <section class="project-hero section reveal is-visible" aria-labelledby="privacy-title">
+        <p class="eyebrow">Privacy</p>
+        <h1 id="privacy-title">Simple, first-party<br><span>analytics.</span></h1>
+        <p class="project-detail-description">This portfolio uses a small first-party analytics service to understand which pages and projects are useful, how visitors find the site, and which contact or project links are used.</p>
+        <div class="modal-body-grid">
+          <div>
+            <div class="modal-section-title">What is collected</div>
+            <ul class="modal-features">
+              <li>Pseudonymous random browser and session identifiers, page and project views, and intentional link or screenshot interactions.</li>
+              <li>Approved UTM campaign values, referring domain only, approximate device/browser/operating-system category, and country-level location supplied by Cloudflare.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="modal-section-title">What is not collected</div>
+            <ul class="modal-features">
+              <li>No raw IP address, precise location, full referrer URL, form content, clipboard content, password, or invasive browser fingerprint.</li>
+              <li>No cross-site advertising profile or sale of analytics data.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section reveal is-visible" aria-labelledby="choices-title">
+        <div class="section-label"><span>01</span> Your choices</div>
+        <div class="section-content">
+          <h2 id="choices-title">Control on this browser.</h2>
+          <p>Raw event records are retained for approximately 180 days, then removed by scheduled cleanup. Aggregated daily totals may remain without individual event records. Random identifiers estimate browsers, not unique people.</p>
+          <p>To stop future analytics from this browser, run <code>localStorage.setItem('portfolio_ignore', '1')</code> in the browser console while on this site. To re-enable it, run <code>localStorage.removeItem('portfolio_ignore')</code>. Where opt-in consent is required, tracking remains off until it is granted through the site prompt.</p>
+          <p>Referrer attribution is inferred when a browser provides it. UTM-tagged links are explicit campaign information and are more dependable. Missing referrers are reported as unknown or unattributed, not confirmed direct visits.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>&copy; 2026 Aaron Santos Tulabut</span><span><a href="index.html">Home</a> &middot; <a href="#top">Back to top &uarr;</a></span></footer>
+  </div>
+  <script src="js/analytics-config.js"></script>
+  <script src="js/analytics-tracker.js"></script>
+</body>
+</html>

@@ -60,7 +60,7 @@ function renderProjectPage() {
           const imageIndex = imageCounter;
           imageCounter += 1;
           return `
-            <button class="gallery-item screenshot-button" type="button" data-image-index="${imageIndex}" aria-label="Open screenshot: ${escapeAttribute(image.caption)}">
+            <button class="gallery-item screenshot-button" type="button" data-image-index="${imageIndex}" data-analytics-event="screenshot_open" aria-label="Open screenshot: ${escapeAttribute(image.caption)}">
               <img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(image.alt)}" loading="lazy">
               <span>${escapeHtml(image.caption)}</span>
             </button>

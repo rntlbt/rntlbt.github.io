@@ -1,0 +1,16 @@
+{
+  "name": "rntlbt-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test cloudflare/tests/*.test.js",
+    "check": "node --check cloudflare/shared/analytics.js && node --check cloudflare/shared/reporting.js && node --check cloudflare/collector/src/index.js && node --check cloudflare/admin/src/index.js && node --check cloudflare/admin/src/dashboard.js && node --check js/analytics-tracker.js",
+    "collector:dev": "wrangler dev --config cloudflare/collector/wrangler.jsonc --env development --persist-to .wrangler/analytics-local",
+    "dashboard:dev": "wrangler dev --config cloudflare/admin/wrangler.jsonc --env development --persist-to .wrangler/analytics-local",
+    "db:migrate:local": "wrangler d1 migrations apply rntlbt-portfolio-db --local --config cloudflare/collector/wrangler.jsonc --env development --persist-to .wrangler/analytics-local",
+    "db:migrate:remote": "wrangler d1 migrations apply rntlbt-portfolio-db --remote --config cloudflare/collector/wrangler.jsonc --env=\"\""
+  },
+  "devDependencies": {
+    "wrangler": "4.162.0"
+  }
+}

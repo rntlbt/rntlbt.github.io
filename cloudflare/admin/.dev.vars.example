@@ -1,0 +1,3 @@
+# Local-only owner identity used with the access.dev identity in wrangler.jsonc.
+# Copy this file to .dev.vars. Never commit the copied file.
+OWNER_EMAIL=owner@example.com
