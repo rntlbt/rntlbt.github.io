@@ -1,6 +1,8 @@
 # Aaron Santos Tulabut — Portfolio
 
-**Aaron Santos Tulabut**, a Junior Web Developer.
+**Aaron Santos Tulabut**, Web Developer | Full Stack Developer.
+
+Currently at FBANTA Corporation, working across web development, systems integration, workflow automation, and conversion analytics. The portfolio includes selected projects, professional experience, and a Scrimba Fullstack Developer Path certificate of completion.
 
 The site is built with plain HTML, CSS, and JavaScript, with a focus on a simple dark interface, responsive layouts, accessible interactions, and project-focused presentation.
 
