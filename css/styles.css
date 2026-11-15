@@ -96,6 +96,7 @@ h1 span, em { color: var(--cyan); font-style: normal; }
 .hero-meta span + span::before { content: '\00B7'; margin-right: 18px; color: var(--cyan-dark); }
 
 .hero-panel { padding: 16px; background: var(--surface); border: 1px solid var(--white-10); border-radius: 28px; box-shadow: var(--shadow); }
+.profile-photo { display: block; width: 100%; height: auto; border-radius: 16px; }
 .hero-panel-footer { display: flex; justify-content: space-between; gap: 18px; padding: 14px 2px 0; color: var(--muted); font-size: .78rem; }
 .hero-panel-footer a { color: var(--cyan); }
 
