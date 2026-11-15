@@ -5,8 +5,13 @@ export function getReportRange(url, timezone = 'Asia/Manila', now = Date.now()) 
   const customEnd = url.searchParams.get('end');
   if (customStart || customEnd) {
     if (!isDate(customStart) || !isDate(customEnd)) throw new Error('Custom dates must use YYYY-MM-DD.');
-    const start = startOfDayInZone(customStart, timezone);
-    const end = startOfDayInZone(addDays(customEnd, 1), timezone);
+    const startTime = parseTime(url.searchParams.get('start_time'));
+    const endTime = parseTime(url.searchParams.get('end_time'));
+    const start = startOfDayInZone(customStart, timezone) + (startTime ?? 0) * 60_000;
+    // A time picker has minute precision, so include the full selected end minute.
+    const end = endTime == null
+      ? startOfDayInZone(addDays(customEnd, 1), timezone)
+      : startOfDayInZone(customEnd, timezone) + (endTime + 1) * 60_000;
     if (end <= start || end - start > 180 * DAY_MS) throw new Error('Custom range must be between 1 and 180 days.');
     return { key: 'custom', start, end, previousStart: start - (end - start), previousEnd: start, timezone };
   }
@@ -167,6 +172,15 @@ function row(result) {
 
 function isDate(value) {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00Z`));
+}
+
+function parseTime(value) {
+  if (value == null || value === '') return null;
+  if (typeof value !== 'string' || !/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(value)) {
+    throw new Error('Custom times must use HH:MM.');
+  }
+  const [hours, minutes] = value.split(':').map(Number);
+  return hours * 60 + minutes;
 }
 
 function addDays(isoDate, amount) {

@@ -74,6 +74,8 @@ npm.cmd run db:migrate:local
 
 The last command applies the migration to a local D1 store at `.wrangler/analytics-local`; it does not touch production.
 
+The private dashboard supports whole-day presets and a custom start/end date. Optional custom start and end times can narrow a range to part of a day; the selected end minute is included. These inputs use the dashboard timezone, which defaults to `Asia/Manila`.
+
 For local collector testing, use one terminal:
 
 ```powershell

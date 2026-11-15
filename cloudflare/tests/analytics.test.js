@@ -48,3 +48,9 @@ test('limits dashboard custom ranges to the raw-event retention window', () => {
   assert.equal(range.end - range.start, 7 * 86_400_000);
   assert.throws(() => getReportRange(new URL('https://dashboard.example/api/dashboard?start=2026-01-01&end=2026-08-01'), 'Asia/Manila'), /180 days/);
 });
+
+test('supports a same-day custom time window in the dashboard timezone', () => {
+  const url = new URL('https://dashboard.example/api/dashboard?start=2026-01-07&start_time=09:00&end=2026-01-07&end_time=10:30');
+  const range = getReportRange(url, 'Asia/Manila');
+  assert.equal(range.end - range.start, 91 * 60_000);
+});
